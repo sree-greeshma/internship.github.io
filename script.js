@@ -51,3 +51,16 @@ function displayJobListings(jobData) {
 window.onload = function() {
   fetchJobListings();
 };
+function fetchContent() {
+        // Make an AJAX request (You can also use Fetch API)
+        fetch('https://api.example.com/content')
+            .then(response => response.json())
+            .then(data => {
+                // Update the content section with dynamic data
+                document.getElementById('content').innerHTML = data.content;
+            })
+            .catch(error => console.error('Error fetching content:', error));
+    }
+
+    // Call the fetchContent function when the page loads
+    fetchContent();
